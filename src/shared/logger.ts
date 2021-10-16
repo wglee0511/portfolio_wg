@@ -1,4 +1,10 @@
-const logger = (message: string): string => {
+declare var process: {
+  env: {
+    NODE_ENV: string;
+  };
+};
+
+const logger = (message: string): void => {
   if (process.env.NODE_ENV === "production") {
     return;
   }
