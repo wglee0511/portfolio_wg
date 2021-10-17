@@ -2,7 +2,7 @@ import Nav from "./components/Nav";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{width: "100%"}}>
       <Nav />
     </div>
   );
