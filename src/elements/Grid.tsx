@@ -12,13 +12,28 @@ interface Props {
     height: string,
     children: React.ReactNode,
     _onClick : () => void,
-    is_flex : FlexOption
+    is_flex : FlexOption,
+    cursor: boolean,
+    margin : string,
+    padding: string,
+    bg: string,
+    color: string,
+    hover: boolean,
+    hover_color: string,
+    hover_bg: string
 }
-
 type WrapperType ={
     width : string,
     height: string,
-    is_flex : FlexOption
+    is_flex : FlexOption,
+    cursor: boolean,
+    margin: string,
+    padding: string,
+    bg:string,
+    color: string,
+    hover: boolean,
+    hover_color: string,
+    hover_bg : string
 }
 
 const Grid = (props: Props) => {
@@ -37,11 +52,31 @@ Grid.defaultProps = {
     children : null,
     _onClick : () => {},
     is_flex : null,
+    cursor: false,
+    margin: "",
+    padding: "",
+    bg: "white",
+    color: "black",
+    hover: false,
+    hover_color: "black",
+    hover_bg: "white"
 }
 
 const Wrapper = styled.div<WrapperType>`
     width : ${props => props.width};
     height: ${props => props.height};
+    margin : ${props => props.margin};
+    background-color: ${props => props.bg};
+    color: ${props => props.color};
+    ${props => props.hover && `
+        :hover {
+            cursor: pointer;
+            color: ${props.hover_color};
+            background-color : ${props.hover_bg};
+        }
+
+    `}
+    ${props => props.cursor && "cursor : pointer"};
     ${props => {
         if (props.is_flex !== null) {
             return `

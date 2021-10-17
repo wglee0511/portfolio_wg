@@ -13,7 +13,9 @@ const Nav = (props: Props) => {
   return <Wrapper>
     <Grid is_flex={{align_item: "space-between", just_con:"center"}}>
     <Grid>
+  
       Wg's Portfolio
+
     </Grid>
     <Grid>
   Box   
@@ -28,7 +30,6 @@ const Wrapper = styled.nav<activeType>`
   height: 100%;
   position: fixed;
   top: 0;
-
 `
 
 export default withRouter(Nav);
